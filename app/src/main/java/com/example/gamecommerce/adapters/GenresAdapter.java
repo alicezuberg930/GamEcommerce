@@ -32,7 +32,7 @@ public class GenresAdapter extends RecyclerView.Adapter<GenresAdapter.ViewHolder
     @NonNull
     @Override
     public GenresAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(layout,parent,false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(layout, parent, false));
     }
 
     @Override
@@ -54,7 +54,7 @@ public class GenresAdapter extends RecyclerView.Adapter<GenresAdapter.ViewHolder
         return genres.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView name;
         public ViewHolder(@NonNull View itemView) {
