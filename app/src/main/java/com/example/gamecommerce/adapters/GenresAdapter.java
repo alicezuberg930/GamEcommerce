@@ -39,7 +39,6 @@ public class GenresAdapter extends RecyclerView.Adapter<GenresAdapter.ViewHolder
     public void onBindViewHolder(@NonNull GenresAdapter.ViewHolder holder, int i) {
         Glide.with(context).load(genres.get(i).getImgUrl()).into(holder.image);
         holder.name.setText(genres.get(i).getName());
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
