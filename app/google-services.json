@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "899207778952",
+    "firebase_url": "https://grocery-store-df271-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "grocery-store-df271",
+    "storage_bucket": "grocery-store-df271.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899207778952:android:27e6a5bef40dfc7b47453d",
+        "android_client_info": {
+          "package_name": "com.example.gamecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiqoBHNUrHFL3y2usNHcbJSDlw-SecFZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899207778952:android:64519a12d07ddd2047453d",
+        "android_client_info": {
+          "package_name": "com.example.grocerystore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiqoBHNUrHFL3y2usNHcbJSDlw-SecFZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
