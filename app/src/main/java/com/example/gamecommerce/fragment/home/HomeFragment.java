@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.gamecommerce.R;
 import com.example.gamecommerce.adapters.GenresAdapter;
 import com.example.gamecommerce.adapters.PopularProductAdapter;
-import com.example.gamecommerce.adapters.RecommendedProductAdapter;
+import com.example.gamecommerce.adapters.GeneralProductAdapter;
 import com.example.gamecommerce.models.Genre;
 import com.example.gamecommerce.models.Product;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,10 +32,9 @@ public class HomeFragment extends Fragment {
     List<Genre> genres;
     PopularProductAdapter popularProductAdapter;
     GenresAdapter genresAdapter;
-    RecommendedProductAdapter recommendedProductAdapter;
+    GeneralProductAdapter recommendedProductAdapter;
     RecyclerView popularProductsView, genresView, recommendedProductsView;
     FirebaseFirestore db;
-
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         db = FirebaseFirestore.getInstance();
@@ -86,7 +85,7 @@ public class HomeFragment extends Fragment {
         recommendedProductsView = root.findViewById(R.id.recommended_list_view);
         recommendedProductsView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         recommendedProducts = new ArrayList<>();
-        recommendedProductAdapter = new RecommendedProductAdapter(getActivity(), recommendedProducts, R.layout.vertical_product_card);
+        recommendedProductAdapter = new GeneralProductAdapter(getActivity(), recommendedProducts, R.layout.vertical_product_card);
         recommendedProductsView.setAdapter(recommendedProductAdapter);
         db.collection("recommended_products")
                 .get()
@@ -104,6 +103,8 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
+
+
         return root;
     }
 

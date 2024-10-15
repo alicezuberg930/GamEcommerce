@@ -6,6 +6,7 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private String profileImage;
 
     public User() {}
 
@@ -13,6 +14,13 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public User(String name, String email, String password, String profileImage) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.profileImage = profileImage;
     }
 
     public String getName() {
@@ -37,6 +45,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 
     @NonNull

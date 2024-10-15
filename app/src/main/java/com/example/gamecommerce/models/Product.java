@@ -1,8 +1,10 @@
 package com.example.gamecommerce.models;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 public class Product implements Serializable {
+    private String id;
     private String name;
     private int price;
     private String description;
@@ -75,5 +77,22 @@ public class Product implements Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public HashMap<String, Object> toMap() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", name);
+        map.put("price", price);
+        map.put("discount", discount);
+        map.put("imageUrl", imageUrl);
+        return map;
     }
 }

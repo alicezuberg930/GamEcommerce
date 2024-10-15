@@ -19,12 +19,12 @@ import com.example.gamecommerce.views.ProductDetailsActivity;
 import java.util.List;
 import java.util.Locale;
 
-public class RecommendedProductAdapter extends RecyclerView.Adapter<RecommendedProductAdapter.ViewHolder> {
-    private Context context;
-    private List<Product> products;
-    private int layout;
+public class GeneralProductAdapter extends RecyclerView.Adapter<GeneralProductAdapter.ViewHolder> {
+    private final Context context;
+    private final List<Product> products;
+    private final int layout;
 
-    public RecommendedProductAdapter(Context context, List<Product> products, int layout) {
+    public GeneralProductAdapter(Context context, List<Product> products, int layout) {
         this.context = context;
         this.products = products;
         this.layout = layout;
@@ -32,23 +32,23 @@ public class RecommendedProductAdapter extends RecyclerView.Adapter<RecommendedP
 
     @NonNull
     @Override
-    public RecommendedProductAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public GeneralProductAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(layout,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecommendedProductAdapter.ViewHolder holder, int i) {
-        Glide.with(context).load(products.get(i).getImageUrl()).into(holder.image);
-        holder.name.setText(products.get(i).getName());
-        holder.price.setText(Integer.toString(products.get(i).getPrice()));
-        holder.discount.setText(Integer.toString(products.get(i).getDiscount()));
-        holder.rating.setText(String.format(Locale.getDefault(), "%f", products.get(i).getRating()));
+    public void onBindViewHolder(@NonNull GeneralProductAdapter.ViewHolder holder, int position) {
+        Glide.with(context).load(products.get(position).getImageUrl()).into(holder.image);
+        holder.name.setText(products.get(position).getName());
+        holder.price.setText(Integer.toString(products.get(position).getPrice()));
+        holder.discount.setText(Integer.toString(products.get(position).getDiscount()));
+        holder.rating.setText(String.format(Locale.getDefault(), "%f", products.get(position).getRating()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ProductDetailsActivity.class);
-                intent.putExtra("product", products.get(i));
+                intent.putExtra("product", products.get(holder.getAdapterPosition()));
                 context.startActivity(intent);
             }
         });
@@ -59,7 +59,7 @@ public class RecommendedProductAdapter extends RecyclerView.Adapter<RecommendedP
         return products.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView name, price, discount, rating;
         public ViewHolder(@NonNull View itemView) {

@@ -119,18 +119,25 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:elevation="55dp">
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="55dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_bg"
+            android:id="@+id/add_cart_button"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:paddingHorizontal="5dp"
             android:text="Thêm vào giỏ hàng"
-            android:textAllCaps="false"/>
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
         <Space
             android:layout_width="20dp"
             android:layout_height="0dp" />
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="55dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_bg"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:paddingHorizontal="5dp"
             android:text="Mua ngay"
+            android:textColor="@color/white"
             android:textAllCaps="false"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.GroceryStore"
         tools:targetApi="31">
         <activity
+            android:name=".views.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.CheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.ProductDetailsActivity"
             android:exported="false"
             android:label="@string/title_activity_product_details"

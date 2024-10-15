@@ -47,8 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                loginUser();
+                loginUser();
             }
         });
 
@@ -61,6 +60,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
+        if(auth.getCurrentUser() != null){
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
         if(userEmail.isEmpty()) {
